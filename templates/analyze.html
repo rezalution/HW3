@@ -1,0 +1,100 @@
+{% include "parts/header.html" %}
+
+<h2>Stats for {{ cal_name }}</h2>
+
+<script>
+  var stats = {{ stats_json }};
+</script>
+
+<h3>Percent Time Booked</h3>
+<div id="event_time" class="pie"></div>
+
+<h3>Total Events Per Weekday</h3>
+<div id="weekdays" class="pie"></div>
+
+<h3>Events Per Day</h3>
+<div id="series" class="series"></div>
+
+<h3>Misc</h3>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Data</th><th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Average Events/Day</td><td> {{ stats.avg_events_day }}</td>
+    </tr>
+    <tr>
+      <td>Average Attendees</td><td>{{ stats.avg_attendees }}</td>
+    </tr>
+    <tr>
+      <td>Total Events</td><td>{{ stats.events }}</td>
+    </tr>
+    <tr>
+      <td>Booked Hours</td><td>{{ stats.event_hours|round|int }}</td>
+    </tr>
+    <tr>
+      <td>Working Hours</td><td>{{ stats.working_hours }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>Debug Information</h2>
+<div class="accordion" id="accordion2">
+
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+        Parameters
+      </a>
+    </div>
+    <div id="collapseOne" class="accordion-body collapse">
+      <div class="accordion-inner">
+        <pre>
+{{ pformat(params, indent=2) }}
+        </pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+        Raw Stats
+      </a>
+    </div>
+    <div id="collapseTwo" class="accordion-body collapse">
+      <div class="accordion-inner">
+        <pre>
+{{ pformat(stats, indent=2) }}
+        </pre>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+        Raw Events
+      </a>
+    </div>
+    <div id="collapseThree" class="accordion-body collapse">
+      <div class="accordion-inner">
+        <ul>
+          {% for event in events %}
+          <li>
+            <a href="{{ event.htmlLink }}"><i>{{ event.summary }}</i></a> : {{ event.start.dateTime }} - {{ event.end.dateTime }}: {{ event._ac.duration }}
+            (Included: {{ event._ac.included }})
+            <pre>{{ pformat(event, indent=2) }}</pre>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% include "parts/footer.html" %}

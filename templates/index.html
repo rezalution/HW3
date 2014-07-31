@@ -1,0 +1,39 @@
+{% include "parts/header.html" %}
+
+<p>
+  Welcome to "Analyze Calendar".
+</p>
+
+<p>
+  This application fetches events from your Google Calendar and shows
+  you some quick stats on how much of your time is booked. It was
+  developed as a "hackweek project"
+  from <a href="http://chartbeat.com">Chartbeat</a>. Note that you
+  need to authorize with Google twice: Once for logging into this
+  application, and once for allowing the application to read your
+  calendar data.
+</p>
+
+<p>
+  <a href="/choose_cal">Start analyzing your calendar</a>
+</p>
+
+<p>
+  <strong>Beware:</strong> This is all very alpha, and there is a lot
+  of things it doesn't handle. A few being:
+</p>
+
+<ul>
+  <li>doesn't handle multi-day events</li>
+  <li>completely unware of time zones</li>
+  <li>does not know about holidays</li>
+  <li>(and many more)</li>
+</ul>
+
+{% if logged_in %}
+<p>
+  <a href="{{ logout_url }}">Logout</a>
+</p>
+{% endif %}
+
+{% include "parts/footer.html" %}
