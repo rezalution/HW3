@@ -1,0 +1,647 @@
+<!DOCTYPE html> <html> <head>
+<title>OSU Availability</title>
+<!-- Date and time picker stuff from: http://jonthornton.github.io/jquery-timepicker/ -->
+<!-- list code: http://demos.jquerymobile.com/1.2.1/docs/lists/lists-readonly-inset.html -->
+
+
+<script src="jquery/jquery-1.8.2.min.js"></script>
+
+<script src="jquery/jquery-ui-1.10.4.custom.min.js"></script>
+<!--gallery code adapted from: view-source:http://www.jqueryscript.net/demo/Tiny-jQuery-Image-Gallery-Plugin-For-Mobile-Devices-imageFlip/-->
+<script src="jquery/imageflip.mini.js"></script>
+
+
+<script src="jquery/jquery.mobile-1.2.0.min.js"></script>
+
+<!-- Date and time picker stuff from: http://jonthornton.github.io/jquery-timepicker/ -->
+<script type="text/javascript" src="jquery/jquery.timepicker.js"></script>
+
+<script type="text/javascript" src="lib/bootstrap-datepicker.js"></script>
+
+<script type="text/javascript" src="lib/site.js"></script>
+
+<script src="jquery/jquery.validate.min.js"></script>
+
+
+<!--have to do script section before link section -->
+<link rel="stylesheet" href="jquery/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="jquery/jquery.timepicker.css" />
+<link rel="stylesheet" type="text/css" href="lib/bootstrap-datepicker.css" />
+<link rel="stylesheet" type="text/css" href="lib/site.css" />
+
+<!--hosting this makes me miss things such as "ajax-loader.gif". Not sure why. Just linking instead -->
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+
+
+<!--make page be device width-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--required charset-->
+<meta charset="UTF-8">
+
+<!-- not entirely necessary, but referenced below to help with device rotation-->
+<style>
+	#block { width: 200px; height: 150px; border: 1px solid black; display: inline-block; vertical-align: top; }
+	.btn { padding: 10px 10px 10px 10px; }
+	#main { text-align: center; }
+</style>
+
+<!--gallery code adapted from: view-source:http://www.jqueryscript.net/demo/Tiny-jQuery-Image-Gallery-Plugin-For-Mobile-Devices-imageFlip/-->
+<style type="text/css">
+#iGallery {
+list-style: none;
+padding: 0px;
+margin: 0px
+}
+#iGallery li {
+list-style: none;
+padding: 2px;
+margin: 2px;
+border: 1px solid #999;
+float: left
+}
+/* imageflip CSS. Copy & Paste this to your CSS file */
+#imageflippage {
+background-color: #000;
+margin: 0px;
+padding: 0px;
+border: none;
+height: 100%;
+width: 100%
+}
+#tadcontent {
+padding: 0px;
+margin: 0px;
+position: relative;
+background: #000;
+height: 100%;
+width: 100%;
+}
+#imageflipimg {
+vertical-align: middle;
+height: 100%;
+width: 100%;
+z-index: 98;
+background-position: center;
+background-size: contain;
+text-align: center;
+background-repeat: no-repeat
+}
+#imagefliper {
+width: 100%;
+top: 45px;
+bottom: 0px;
+position: absolute;
+z-index: 99
+}
+#tadnavi {
+position: fixed;
+top: 0px;
+z-index: 100;
+width: 100%;
+opacity: 0.7;
+display: none
+}
+#tadinfo {
+position: fixed;
+display: none;
+bottom: 0px;
+width: 100%;
+padding: 5px;
+background-color: #333333;
+opacity: 0.7;
+color: #FFFFFF;
+text-align: center;
+font-size: small;
+font-family: Verdana, Geneva, sans-serif
+}
+.ui-datepicker{z-index: 99 !important};
+</style>
+
+<!-- style of error message-->
+<style>
+	label.error {color: red; display: block; padding-bottom: 10px; }
+</style>
+
+
+</head>
+<body> 
+
+<!--much of this code is adapted directly from class lecture materials. -->
+
+
+
+<!-- test ajax -->
+
+
+
+<script>
+
+function testPython(){
+	if (confirm('This takes a long time. Are you sure you want to do this?')) {
+    	alert("Updating database. This usually takes about 2 - 3 hours");
+		$.ajax({
+		url: 'pythonConnect.php', 
+		type: "POST",
+		data: ({func: 'resetPeopleDatabase',
+			}),
+		success: function(data){
+			//alert(data);
+			//alert("Updating Database. This takes about 2 - 3 hours.");
+		}
+
+	}); 
+} 
+else {
+    // Do nothing
+}	
+		
+
+		
+}
+</script>
+<script>
+
+function getJSON(myCommand){
+		$.ajax({
+		url: 'pythonConnect.php', 
+		type: "POST",
+		data: ({func: 'getJSON',
+			command: myCommand}),
+		success: function(data){
+			//alert(data);
+			//alert("hi");
+			var result = JSON.parse(data);
+			//alert (result);
+			
+			//get and clear the current list of times
+			var list = 	document.getElementById("timesList");
+			$("#timesList").empty();
+			
+			
+
+			//alert(result.length);
+			
+			var li = document.createElement('li');
+			for (var i = 0; i < result.length; i++) {	
+
+				if (i == 0){
+					li.appendChild(document.createTextNode(result[i].onid));
+				}
+				var timesField = document.createElement('p');
+				timesField.appendChild(document.createTextNode(result[i].startAvailability + " - " + result[i].endAvailability ));
+				li.appendChild(timesField);
+
+			}
+				list.appendChild(li);
+				 $("#timesList").listview("refresh");
+
+		}
+		
+		
+
+	}); 
+		
+}
+</script>
+
+<script>
+
+function getMultipleJSON(myCommand){
+		$.ajax({
+		url: 'pythonConnect.php', 
+		type: "POST",
+		data: ({func: 'getMultipleJSON',
+			command: myCommand}),
+			success: function(data){
+			//alert(data);
+			
+
+			
+			//get and clear the current list of times
+			var list = 	document.getElementById("timesList");
+			$("#timesList").empty();
+			
+			if (data.length > 0){ //if we got data, we use it
+				var result = JSON.parse(data);
+			}
+			else{//if no data came back, no users had availability. Notify user.
+				var li = document.createElement('li');
+				li.appendChild(document.createTextNode("There were no available times for the users(s) requested"));
+				list.appendChild(li);
+				$("#timesList").listview("refresh");//refresh the list
+				return;
+			}
+
+			//alert(result.length);
+			
+			var onidIDs = new Array();
+			var notFoundIDs = new Array();
+			var onidString = "";
+			var notFoundString = "";
+			//we will loop through twice. once for the header, then again for the rest of info
+			for (var i = 0; i < result.length; i++) {	
+				if (result[i].onid){//if there is an onid id to grab, we add it
+					onidIDs.push(result[i].onid);
+					//alert(onidIDs[i]);
+				}
+				else{
+					break;
+				}
+			}
+			
+			
+			//now we have the header for the first slot, so show it, then iterate and grab each time
+			var li = document.createElement('li');
+
+			for (i = 0; i < result.length; i++) {	
+
+				if (i == 0){//
+					for(var j = 0; j< onidIDs.length; j++){
+					
+						if ((j>0) && (j== onidIDs.length -1)){//this test is just for grammar
+							onidString += "and ";
+							onidString += onidIDs[j];
+						}
+						else{
+							onidString += onidIDs[j] + ", ";
+						}
+					}
+				//alert(j);
+
+				if (j==1){//grammar check
+					onidString += " is available the following times:";
+				}
+				else{
+					onidString += " are available the following times:";
+				}
+				li.appendChild(document.createTextNode(onidString));
+				}
+				
+				
+				
+				if (result[i].notFound){//if there is an onid id to grab, we add it
+					notFoundIDs.push(result[i].notFound);
+				}
+			
+				//add the times
+				if(result[i].startAvailability){			
+					var timesField = document.createElement('p');
+					timesField.appendChild(document.createTextNode(result[i].startAvailability + " - " + result[i].endAvailability ));
+					li.appendChild(timesField);
+				}
+				
+				list.appendChild(li);
+
+
+	
+			}
+			//now we will list the users that were not found
+			var li = document.createElement('li');
+			//alert(notFoundIDs.length);
+			for (var k = 0; k< notFoundIDs.length; k++){
+				if ((k>0) && (k== notFoundIDs.length -1)){//this test is just for grammar
+					notFoundString += "and ";
+					notFoundString += notFoundIDs[k];
+				}
+				else{
+					notFoundString += notFoundIDs[k] + ", ";
+				}
+				
+				if (k == 1){//again, just grammar. 
+					notFoundString += "were not found in the database";
+				}
+				else{
+					notFoundString += "was not found in the database";
+
+				}
+				li.appendChild(document.createTextNode(notFoundString));
+
+				
+			}
+			if (notFoundIDs.length > 0){ //only append if there were unfound ONIDs
+				list.appendChild(li);
+			}
+
+			
+			
+			
+			$("#timesList").listview("refresh");//refresh the list
+
+		}
+		
+		
+
+	}); 
+		
+}
+</script>
+
+<script>
+
+function getUsers(myCommand){
+		$.ajax({
+		url: 'pythonConnect.php', 
+		type: "POST",
+		data: ({func: 'getUsers',
+			command: myCommand}),
+		success: function(data){
+			//alert(data);
+			
+			//get and clear the current list of times
+			var list = 	document.getElementById("timesList");
+			$("#timesList").empty();
+			
+			
+			
+			if (data.length > 0){ //if we got data, we use it
+				var result = JSON.parse(data);
+			}
+			else{
+				return;
+			}
+			
+			if(result.length == 0){
+				//if no data came back, no users had availability. Notify user.
+				var li = document.createElement('li');
+				li.appendChild(document.createTextNode("There are no users available in that time window"));
+				list.appendChild(li);
+				$("#timesList").listview("refresh");//refresh the list
+			}
+			
+
+			
+			var onidIDs = new Array();
+			var notFoundIDs = new Array();
+			var onidString = "";
+			var notFoundString = "";
+			//we will loop through twice. once for the header, then again for the rest of info
+			for (var i = 0; i < result.length; i++) {	
+				if (result[i].onid){//if there is an onid id to grab, we add it
+					onidIDs.push(result[i].onid);
+					//alert(onidIDs[i]);
+				}
+				else{
+					break;
+				}
+			}
+			
+			
+			//now we have the header for the first slot, so show it, then iterate and grab each time
+			var li = document.createElement('li');
+
+			for (i = 0; i < result.length; i++) {	
+
+				if (i == 0){//
+					for(var j = 0; j< onidIDs.length; j++){
+					
+						if ((j>0) && (j== onidIDs.length -1)){//this test is just for grammar
+							onidString += "and ";
+							onidString += onidIDs[j];
+						}
+						else{
+							onidString += onidIDs[j] + ", ";
+						}
+					}
+				//alert(j);
+				if (j==0){
+					onidString += "There are no users available for that time window";
+				}
+				else if (j==1){//grammar check
+					onidString += " is available."
+				}
+				else{
+					onidString += " are available."
+				}
+				li.appendChild(document.createTextNode(onidString));
+				}
+				
+				
+				
+				if (result[i].notFound){//if there is an onid id to grab, we add it
+					notFoundIDs.push(result[i].notFound);
+				}
+		
+				list.appendChild(li);
+
+			}
+			//now we will list the users that were not found
+			var li = document.createElement('li');
+			//alert(notFoundIDs.length);
+			for (var k = 0; k< notFoundIDs.length; k++){
+				if ((k>0) && (k== notFoundIDs.length -1)){//this test is just for grammar
+					notFoundString += "and ";
+					notFoundString += notFoundIDs[k];
+				}
+				else{
+					notFoundString += notFoundIDs[k] + ", ";
+				}
+				
+				if (k == 1){//again, just grammar. 
+					notFoundString += "were not found in the database";
+				}
+				else{
+					notFoundString += "was not found in the database";
+
+				}
+				li.appendChild(document.createTextNode(notFoundString));
+
+				
+			}
+			if (notFoundIDs.length > 0){ //only append if there were unfound ONIDs
+				list.appendChild(li);
+			}
+
+			
+			
+			
+			$("#timesList").listview("refresh");//refresh the list
+
+
+		}
+		
+		
+
+	}); 
+		
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+<script>
+$(function() {
+// $(window).bind('resize', layout);
+// $(window).bind('devicemotion', layout);
+	$(window).bind('orientationchange', layout);
+	function layout() {
+		var wid = $(window).width();
+		var hgt = $(window).height();
+		if (wid > hgt) {
+			$("#controls").css("display", "inline-block");
+			$(".btn").css("display", "block");
+		} 
+		else {
+			$("#controls").css("display", "block");
+			$(".btn").css("display", "inline-block");
+		}
+	}
+layout();
+});
+</script>
+
+<script>
+$().ready(function () {
+  //validate code from http://jsfiddle.net/qUYvS/
+  $("#frm").validate({
+    rules: {
+      	onids: "required",
+      	startDate: "required",
+		startTime: "required",
+		endDate: "required",
+		endTime: "required",
+		
+    },
+ 
+    messages: {
+      	onids: "Please enter at least one onid id",
+      	startDate: "Please enter a start date",
+		startTime: "Please enter a start time",
+		endDate: "Please enter an end date",
+		endTime: "Please enter an end time",
+    },
+    
+    
+    //this is where the form will submit, and what will happen
+    submitHandler: function (form) { 
+      //now we need to parse the information into the format that the main app needs
+      //we need: ONID HH:MM YYYY:MM:DD then the time then date again. as a string
+      
+      	var command = document.getElementById('onids').value;
+      	command = command.replace(/\s+/g, '');//get rid of all of the spaces
+      	command += " ";
+      	command += document.getElementById('startTime').value;
+    	command += " ";
+      	command += document.getElementById('startDate').value;
+        command += " ";
+        command += document.getElementById('endTime').value;
+        command += " ";
+        command += document.getElementById('endDate').value;
+        command += " ";
+        command += document.getElementById('earlyTime').value;
+        command += " ";
+        command += document.getElementById('lateTime').value;        
+        
+      	command = command.replace(/\/+/g, '-');//change the / to -, as per the requested format
+
+		
+		
+		var select = document.getElementById("methodSelector");
+		if(select.options[select.selectedIndex].value.localeCompare("Users")==0){
+			getUsers(command);
+		}
+		else{
+			getMultipleJSON(command);
+		}
+		
+      	//alert(command);
+      
+      
+      return false;
+    }
+  });
+
+});
+
+</script>
+
+
+
+
+
+
+	<div data-role="page" id="one">
+		<div data-role="header"> <h1>Onid Availability</h1></div>
+
+		<div data-role="content">
+		
+			<!--make a list to add to later-->
+			<ul data-role="listview" data-inset="true" id="timesList"></ul>
+			
+			<!--make the form-->
+			<form id="frm">
+        	Input Onid Id's separated by commas: <input class="required text" name="onids" id="onids"><BR>
+ 
+            <div class="demo">
+                <p id="datepairExample">
+                    Starting date: <input id="startDate" name="startDate" type="text" class="required date start" />
+                    Starting time:<input id="startTime" name="startTime" type="text" class="required time start" /> to
+                	Ending date:<input id="endDate" name="endDate"	type="text" class="required date end" />
+                   	Ending time: <input id="endTime" name="endTime" 	type="text" class="required time end" />
+                </p>
+                <p id="datepairExample2">
+                	Earliest time of day: <input id="earlyTime" name="earlyTime" 	type="text" class="required time start" value="06:00"/>
+                   	Latest time of day: <input id="lateTime" name="lateTime" 	type="text" class="required time end" value="18:00"/>
+                </p>
+            </div>
+
+            <script src="jquery/jonthortondatepair.js"></script>
+            
+            <script>
+                $('#datepairExample .time').timepicker({
+                    'showDuration': true,
+                    'timeFormat': 'H:i'
+                });
+
+                $('#datepairExample .date').datepicker({
+                    'format': 'yyyy/mm/dd',
+                    'autoclose': true
+                });
+
+                $('#datepairExample').datepair();
+            </script>
+                        <script>
+                $('#datepairExample2 .time').timepicker({
+                    'showDuration': true,
+                    'timeFormat': 'H:i'
+                });
+
+                $('#datepairExample2 .date').datepicker({
+                    'format': 'yyyy/mm/dd',
+                    'autoclose': true
+                });
+
+                $('#datepairExample2').datepair();
+            </script>
+				<select id="methodSelector">
+  					<option value="Users">Check who is available</option>
+  					<option value="MultipleTimes" selected>Find when user(s) available</option>
+				</select>
+				
+				<input type="submit" value="Get Times">
+			</form>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<!--button run only button that works right now-->
+			<input type="button" onClick="testPython()" value="Reset Database" />
+
+		</div>
+	</div>
+		
+
+
+</body>
