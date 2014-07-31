@@ -4,6 +4,7 @@ runtime: python27
 api_version: 1
 threadsafe: true
 
+handlers:
 # re-direct to home.html if no path is give
 - url: /
   static_files: home.html
@@ -14,6 +15,9 @@ threadsafe: true
 - url: /(.*)
   static_files: \1
   upload: (.*)
+
+- url: /.*
+  static_dir: HW3.application
 
 libraries:
 - name: webapp2
