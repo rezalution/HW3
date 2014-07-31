@@ -8,7 +8,7 @@ api_version: 1
 threadsafe: yes
 
 handlers:
-- url: /stylesheets
+- url: /static
   static_dir: stylesheets
 
 - url: /.*
