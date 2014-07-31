@@ -19,7 +19,7 @@ handlers:
   static_dir: static/css
 
 - url: /.*
-  script: main.py
+  script: calap.py
 
 libraries:
 - name: jinja2
