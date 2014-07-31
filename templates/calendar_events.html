@@ -1,0 +1,14 @@
+<html>
+<head>
+	<title> {{ Title }} </title>
+</head>
+
+<body>
+	<h2> Events - {{ today.strftime('%Y-%m-%d') }} </h2>
+<ul>
+{% for event in events %}
+  <li><a href="{{ url_for("calling_phone", event_id=event.id) }}">{{ event.summary }}</a></li>
+{% endfor %}
+</ul>
+</body>
+</html>
