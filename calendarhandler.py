@@ -59,28 +59,10 @@ class IndexHandler(webapp2.RequestHandler):
             <br>
             - - - - - - -
             <br>
-            <h1>Update</h1>
-            <p>404 Not Found.</p>
           </body>
         </html>
         """
-page_token = None
-while True:
-  events = service.events().list(calendarId='primary', pageToken=page_token).execute()
-  for event in events['items']:
-    print event['summary']
-  page_token = events.get('nextPageToken')
-  if not page_token:
-    break
-        
-        GET https://www.googleapis.com/calendar/v3/calendars/cs419.team4%40gmail.com/events?key={AIzaSyCqjqmwmfCiPgPYBp_hhjmIlabCBO1RxhU}
-
-Authorization:  Bearer ya29.UwCrnQoV9ot77iIAAABsgF7bYKLh76O4cL8dlvcCoo9Cmc0r2_TdqsADwFgou2NASz2k1nl0mQKA_F0TBnk
-X-JavaScript-User-Agent:  Google APIs Explorer
-        
         self.response.write(MAIN_PAGE_HTML)
-        
-        
 
 class CalendarCreateHandler(webapp2.RequestHandler):
 
