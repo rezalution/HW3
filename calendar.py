@@ -24,7 +24,7 @@ if credentials is None or credentials.invalid == True:
 http = httplib2.Http()
 http = credentials.authorize(http)
 service = build(serviceName='calendar', version='v3', http=http,
-   developerKey='AI6456456456456456456456456456yKhI')
+   developerKey='AIzaSyCqjqmwmfCiPgPYBp_hhjmIlabCBO1RxhU')
    
 events = service.events().list(calendarId='cs419.team4@gmail.com').execute()
 print events
