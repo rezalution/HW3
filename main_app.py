@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 # ideally for actual app - store users in the database and query them for the personalized greeting
 users = {
-    "+13057616377": "Jenny"
+    "+13057616377": "group4"
 }
 
 
