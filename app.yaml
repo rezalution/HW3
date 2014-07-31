@@ -1,15 +1,16 @@
-application: graphite-flare-658
-version: 1
+application: app-id-goes-here
+version: 2
 runtime: python27
-api_version: 1
 threadsafe: true
+api_version: 1
 
 handlers:
 - url: .*
-  script: calendar.application
-  
+  script: main.app
+
 libraries:
 - name: jinja2
   version: "latest"
 - name: webapp2
   version: "latest"
+
