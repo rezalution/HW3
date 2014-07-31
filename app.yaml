@@ -5,11 +5,14 @@ api_version: 1
 threadsafe: true
 
 handlers:
-- url: /css
-  static_dir: css
-
-- url: /js
-  static_dir: js
+- url: /stylesheets
+  static_dir: stylesheets
 
 - url: /.*
-  script: contactList.application
+  static_dir: guestbook.application
+
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest
