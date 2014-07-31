@@ -9,4 +9,4 @@ threadsafe: yes
 
 handlers:
 - url: /.*
-  script: calendarhandler.app
+  script: app.app

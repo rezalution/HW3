@@ -1,10 +1,9 @@
-GAE_GoogleCalendar
-==================
+google-calendar-app
+===================
 
-Google App Engine環境でのGoogle Calendar連携プログラム。
+Scheduling app to search for free block fo time on your Google Calendar (using Flask).
 
-｜Sample
-　http://2.shinnosuke-kobayashi.appspot.com/
+A preview of the app:
+![Screenshot](https://raw.github.com/lillchan/google-calendar-app/master/static/imgs/calendar-app-screenshot1.png)
 
-｜参考にさせてもらったページ
-  http://d.hatena.ne.jp/thinkAmi/20121117/1353107840
+![Screenshot](https://raw.github.com/lillchan/google-calendar-app/master/static/imgs/calendar-app-screenshot2.png)
