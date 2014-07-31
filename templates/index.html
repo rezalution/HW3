@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Concrastinate</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/resources/app.css" rel="stylesheet" />
+</head>
+
+<body ng-app="concrastinate" ng-controller="TaskListController">
+    <div class="navbar navbar-fixed-top header">
+        <div class="col-md-12">
+            <ul class="nav nav-pills pull-right" ng-controller="NavController">
+                <li><div class="input-group" ng-controller="FilterController">
+                    <input type="checkbox" ng-model="filters.showDone" />
+                </div></li>
+                <li><a href="#" ng-click="addNewTask()"><i class="glyphicon glyphicon-plus"></i></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container" id="main">
+
+        <div class="row">
+            <div class="col-md-4 col-sm-6"
+                ng-repeat="task in taskModel.taskList | filter:filterDone"
+                ng-controller="TaskRowController">
+                
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 contenteditable="true" ng-model="task.title"></h4>
+                    </div>
+                    <div class="panel-body">
+                        {{"{{task.status}}"}} {{"{{task.scheduledStart | date}}"}}
+                        <input type="checkbox" ng-click="markDone()" /> 
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+  
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-route.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular-resource.min.js"></script>
+    
+    <script src="/resources/vendor/ui-bootstrap-tpls-0.4.0.min.js"></script>
+    <script src="/resources/vendor/contenteditable.js"></script>
+    
+    <script src="/resources/mattwhipple/meld.js"></script>
+    <script src="/resources/app.js"></script>
+</body>
+
+</html>

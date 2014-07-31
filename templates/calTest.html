@@ -1,0 +1,14 @@
+<html>
+<head>
+	<title>Test</title>
+
+</head>
+<body>
+	<ul>
+		{% for event in eventTasks %}
+			<li>{{ event.title }} - {{ event.scheduledStart }} - {{ event.event }}</li>
+		{% endfor %}
+	</ul>
+	
+</body>
+</html>
