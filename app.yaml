@@ -19,6 +19,15 @@ handlers:
 - url: /.*
   static_dir: HW3.application
 
+- url: /css
+  static_dir: css
+
+- url: /js
+  static_dir: js
+
+- url: /.*
+  script: SearchGoogle.application
+
 libraries:
 - name: webapp2
   version: latest
