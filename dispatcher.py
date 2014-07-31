@@ -40,7 +40,7 @@ class CalendarTestController(webapp.RequestHandler):
         page_token = None
         while True:
             #events = service.events().instances(calendarId='primary', eventId='cnvv0uak8vh6ies1ap7eif8ee0', pageToken=page_token).execute(http=http)
-            events = service.events().list(calendarId='primary', pageToken=page_token).execute(http=http)
+            events = service.events().list(calendarId='cs419.team4@gmail.com', pageToken=page_token).execute(http=http)
             for event in events['items']:
                 eventMap[event['id']] = event
             page_token = events.get('nextPageToken')
@@ -53,7 +53,7 @@ class CalendarTestController(webapp.RequestHandler):
                 parentId = event['recurringEventId']
                 if not parentId in eventMap:
                     try:
-                        eventMap[parentId] = service.events().get(calendarId='primary', eventId=parentId).execute(http=http)
+                        eventMap[parentId] = service.events().get(calendarId='cs419.team4@gmail.com', eventId=parentId).execute(http=http)
                     except:
                         eventMap[parentId] = 'error'
                 event['parentEvent'] = eventMap[parentId]
