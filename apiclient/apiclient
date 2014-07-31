@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+ <head>
+  <title>Index of /~knudsoza/2014/CS419/419/apiclient</title>
+ </head>
+ <body>
+<h1>Index of /~knudsoza/2014/CS419/419/apiclient</h1>
+<table><tr><th><img src="/icons/blank.gif" alt="[ICO]"></th><th><a href="?C=N;O=D">Name</a></th><th><a href="?C=M;O=A">Last modified</a></th><th><a href="?C=S;O=A">Size</a></th><th><a href="?C=D;O=A">Description</a></th></tr><tr><th colspan="5"><hr></th></tr>
+<tr><td valign="top"><img src="/icons/back.gif" alt="[DIR]"></td><td><a href="/~knudsoza/2014/CS419/419/">Parent Directory</a></td><td>&nbsp;</td><td align="right">  - </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="__init__.py">__init__.py</a></td><td align="right">14-May-2014 18:43  </td><td align="right">601 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="__init__.pyc">__init__.pyc</a></td><td align="right">14-May-2014 18:52  </td><td align="right">178 </td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="channel.py">channel.py</a></td><td align="right">14-May-2014 18:43  </td><td align="right">9.6K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="discovery.py">discovery.py</a></td><td align="right">14-May-2014 18:43  </td><td align="right"> 35K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="discovery.pyc">discovery.pyc</a></td><td align="right">14-May-2014 18:52  </td><td align="right"> 31K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="errors.py">errors.py</a></td><td align="right">14-May-2014 18:43  </td><td align="right">3.4K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="errors.pyc">errors.pyc</a></td><td align="right">14-May-2014 18:52  </td><td align="right">6.1K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="http.py">http.py</a></td><td align="right">14-May-2014 18:43  </td><td align="right"> 52K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="http.pyc">http.pyc</a></td><td align="right">14-May-2014 18:52  </td><td align="right"> 53K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="mimeparse.py">mimeparse.py</a></td><td align="right">14-May-2014 18:43  </td><td align="right">6.3K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="mimeparse.pyc">mimeparse.pyc</a></td><td align="right">14-May-2014 18:52  </td><td align="right">6.9K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="model.py">model.py</a></td><td align="right">14-May-2014 18:43  </td><td align="right"> 11K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="model.pyc">model.pyc</a></td><td align="right">14-May-2014 18:52  </td><td align="right"> 14K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="sample_tools.py">sample_tools.py</a></td><td align="right">14-May-2014 18:43  </td><td align="right">3.4K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/text.gif" alt="[TXT]"></td><td><a href="schema.py">schema.py</a></td><td align="right">14-May-2014 18:43  </td><td align="right">9.1K</td><td>&nbsp;</td></tr>
+<tr><td valign="top"><img src="/icons/unknown.gif" alt="[   ]"></td><td><a href="schema.pyc">schema.pyc</a></td><td align="right">14-May-2014 18:52  </td><td align="right">9.8K</td><td>&nbsp;</td></tr>
+<tr><th colspan="5"><hr></th></tr>
+</table>
+<address>Apache/2.2.15 (Red Hat) Server at web.engr.oregonstate.edu Port 80</address>
+</body></html>
