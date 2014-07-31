@@ -75,7 +75,7 @@ service = build(serviceName='calendar', version='v3', http=http)
 
 # <codecell>
 
-calendar = service.calendars().get(calendarId='primary').execute()
+calendar = service.calendars().get(calendarId='cs419.team4@gmail.com').execute()
 
 # <codecell>
 
