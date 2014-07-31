@@ -1,0 +1,406 @@
+
+#floatingBarsG{
+position:relative;
+width:62px;
+height:77px
+}
+
+.blockG{
+position:absolute;
+background-color:#FFFFFF;
+width:10px;
+height:24px;
+-moz-border-radius:8px 8px 0 0;
+-moz-transform:scale(0.4);
+-moz-animation-name:fadeG;
+-moz-animation-duration:1.04s;
+-moz-animation-iteration-count:infinite;
+-moz-animation-direction:linear;
+-webkit-border-radius:8px 8px 0 0;
+-webkit-transform:scale(0.4);
+-webkit-animation-name:fadeG;
+-webkit-animation-duration:1.04s;
+-webkit-animation-iteration-count:infinite;
+-webkit-animation-direction:linear;
+-ms-border-radius:8px 8px 0 0;
+-ms-transform:scale(0.4);
+-ms-animation-name:fadeG;
+-ms-animation-duration:1.04s;
+-ms-animation-iteration-count:infinite;
+-ms-animation-direction:linear;
+-o-border-radius:8px 8px 0 0;
+-o-transform:scale(0.4);
+-o-animation-name:fadeG;
+-o-animation-duration:1.04s;
+-o-animation-iteration-count:infinite;
+-o-animation-direction:linear;
+border-radius:8px 8px 0 0;
+transform:scale(0.4);
+animation-name:fadeG;
+animation-duration:1.04s;
+animation-iteration-count:infinite;
+animation-direction:linear;
+}
+
+#rotateG_01{
+left:0;
+top:28px;
+-moz-animation-delay:0.39s;
+-moz-transform:rotate(-90deg);
+-webkit-animation-delay:0.39s;
+-webkit-transform:rotate(-90deg);
+-ms-animation-delay:0.39s;
+-ms-transform:rotate(-90deg);
+-o-animation-delay:0.39s;
+-o-transform:rotate(-90deg);
+animation-delay:0.39s;
+transform:rotate(-90deg);
+}
+
+#rotateG_02{
+left:8px;
+top:10px;
+-moz-animation-delay:0.52s;
+-moz-transform:rotate(-45deg);
+-webkit-animation-delay:0.52s;
+-webkit-transform:rotate(-45deg);
+-ms-animation-delay:0.52s;
+-ms-transform:rotate(-45deg);
+-o-animation-delay:0.52s;
+-o-transform:rotate(-45deg);
+animation-delay:0.52s;
+transform:rotate(-45deg);
+}
+
+#rotateG_03{
+left:26px;
+top:3px;
+-moz-animation-delay:0.65s;
+-moz-transform:rotate(0deg);
+-webkit-animation-delay:0.65s;
+-webkit-transform:rotate(0deg);
+-ms-animation-delay:0.65s;
+-ms-transform:rotate(0deg);
+-o-animation-delay:0.65s;
+-o-transform:rotate(0deg);
+animation-delay:0.65s;
+transform:rotate(0deg);
+}
+
+#rotateG_04{
+right:8px;
+top:10px;
+-moz-animation-delay:0.78s;
+-moz-transform:rotate(45deg);
+-webkit-animation-delay:0.78s;
+-webkit-transform:rotate(45deg);
+-ms-animation-delay:0.78s;
+-ms-transform:rotate(45deg);
+-o-animation-delay:0.78s;
+-o-transform:rotate(45deg);
+animation-delay:0.78s;
+transform:rotate(45deg);
+}
+
+#rotateG_05{
+right:0;
+top:28px;
+-moz-animation-delay:0.9099999999999999s;
+-moz-transform:rotate(90deg);
+-webkit-animation-delay:0.9099999999999999s;
+-webkit-transform:rotate(90deg);
+-ms-animation-delay:0.9099999999999999s;
+-ms-transform:rotate(90deg);
+-o-animation-delay:0.9099999999999999s;
+-o-transform:rotate(90deg);
+animation-delay:0.9099999999999999s;
+transform:rotate(90deg);
+}
+
+#rotateG_06{
+right:8px;
+bottom:7px;
+-moz-animation-delay:1.04s;
+-moz-transform:rotate(135deg);
+-webkit-animation-delay:1.04s;
+-webkit-transform:rotate(135deg);
+-ms-animation-delay:1.04s;
+-ms-transform:rotate(135deg);
+-o-animation-delay:1.04s;
+-o-transform:rotate(135deg);
+animation-delay:1.04s;
+transform:rotate(135deg);
+}
+
+#rotateG_07{
+bottom:0;
+left:26px;
+-moz-animation-delay:1.1700000000000002s;
+-moz-transform:rotate(180deg);
+-webkit-animation-delay:1.1700000000000002s;
+-webkit-transform:rotate(180deg);
+-ms-animation-delay:1.1700000000000002s;
+-ms-transform:rotate(180deg);
+-o-animation-delay:1.1700000000000002s;
+-o-transform:rotate(180deg);
+animation-delay:1.1700000000000002s;
+transform:rotate(180deg);
+}
+
+#rotateG_08{
+left:8px;
+bottom:7px;
+-moz-animation-delay:1.3s;
+-moz-transform:rotate(-135deg);
+-webkit-animation-delay:1.3s;
+-webkit-transform:rotate(-135deg);
+-ms-animation-delay:1.3s;
+-ms-transform:rotate(-135deg);
+-o-animation-delay:1.3s;
+-o-transform:rotate(-135deg);
+animation-delay:1.3s;
+transform:rotate(-135deg);
+}
+
+@-moz-keyframes fadeG{
+0%{
+background-color:#000000}
+
+100%{
+background-color:#FFFFFF}
+
+}
+
+@-webkit-keyframes fadeG{
+0%{
+background-color:#000000}
+
+100%{
+background-color:#FFFFFF}
+
+}
+
+@-ms-keyframes fadeG{
+0%{
+background-color:#000000}
+
+100%{
+background-color:#FFFFFF}
+
+}
+
+@-o-keyframes fadeG{
+0%{
+background-color:#000000}
+
+100%{
+background-color:#FFFFFF}
+
+}
+
+@keyframes fadeG{
+0%{
+background-color:#000000}
+
+100%{
+background-color:#FFFFFF}
+
+}
+/* loading animation end */
+
+
+
+
+
+
+body {
+    font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+    padding: 10px 30px;    
+}
+
+button.css3button {
+    font-family:'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+    /*font-family: Arial, Helvetica, sans-serif;*/
+    font-size: 16px;
+    color: #ffffff;
+    padding: 6px 12px;
+    background: -moz-linear-gradient(
+        top,
+        #00bbff 0%,
+        #00bbff);
+    background: -webkit-gradient(
+        linear, left top, left bottom,
+        from(#00bbff),
+        to(#00bbff));
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius: 0px;
+    border: 3px solid #00bbff;
+    -moz-box-shadow:
+        0px 1px 3px rgba(0,187,255,0.5),
+        inset 0px 0px 10px rgba(0,187,255,0.7);
+    -webkit-box-shadow:
+        0px 1px 3px rgba(0,187,255,0.5),
+        inset 0px 0px 10px rgba(0,187,255,0.7);
+    box-shadow:
+        0px 1px 3px rgba(0,187,255,0.5),
+        inset 0px 0px 10px rgba(0,187,255,0.7);
+    text-shadow:
+        0px -1px 0px rgba(255,255,255,0.4),
+        0px 1px 0px rgba(255,255,255,0.3);
+}
+
+/* This css button was generated by css-button-generator.com */
+
+/* add end */
+
+
+.cal-heatmap-container {
+    display: block;
+}
+
+.graph
+{
+    font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+}
+
+.graph-label
+{
+    fill: #999;
+    font-size: 12px
+}
+
+.graph, .graph-legend rect {
+    shape-rendering: crispedges
+}
+
+.graph-rect
+{
+    fill: #ededed
+}
+
+.graph-subdomain-group rect:hover
+{
+    stroke: #000;
+    stroke-width: 1px
+}
+
+.subdomain-text {
+    font-size: 8px;
+    fill: #999;
+    pointer-events: none
+}
+
+.hover_cursor:hover {
+    cursor: pointer
+}
+
+.qi {
+    background-color: #999;
+    fill: #999
+}
+
+/*
+Remove comment to apply this style to date with value equal to 0
+.q0
+{
+    background-color: #fff;
+    fill: #fff;
+    stroke: #ededed
+}
+*/
+
+.q1
+{
+    background-color: #dae289;
+    fill: #dae289
+}
+
+.q2
+{
+    background-color: #cedb9c;
+    fill: #9cc069
+}
+
+.q3
+{
+    background-color: #b5cf6b;
+    fill: #669d45
+}
+
+.q4
+{
+    background-color: #637939;
+    fill: #637939
+}
+
+.q5
+{
+    background-color: #3b6427;
+    fill: #3b6427
+}
+
+.q6
+{
+    background-color: #2E2E2E;
+    fill: #2E2E2E
+}
+
+rect.highlight
+{
+    stroke:#444;
+    stroke-width:1
+}
+
+text.highlight
+{
+    fill: #444
+}
+
+rect.now
+{
+    stroke: red
+}
+
+text.now
+{
+    fill: red;
+    font-weight: 800
+}
+
+.domain-background {
+    fill: none;
+    shape-rendering: crispedges
+}
+
+.ch-tooltip {
+    padding: 10px;
+    background: #222;
+    color: #bbb;
+    font-size: 12px;
+    line-height: 1.4;
+    width: 140px;
+    position: absolute;
+    z-index: 99999;
+    text-align: center;
+    border-radius: 2px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+    display: none;
+    box-sizing: border-box;
+}
+
+.ch-tooltip::after{
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    content: "";
+    padding: 0;
+    display: "block";
+    bottom: -6px;
+    left: 50%;
+    margin-left: -6px;
+    border-width: 6px 6px 0;
+    border-top-color: #222;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+    <head>
+        <title>FY13 YMT</title>
+        <!-- css -->
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+        <link type="text/css" rel="stylesheet" href="/static/cal-heatmap.css" >
+        <!-- js -->
+        <script src="//code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+        <script type="text/javascript" src="/static/cal-heatmap.min.js"></script>
+        <script type="text/javascript" src="/static/ajax.js"></script>
+    </head>
+<body>
+    <p class="ymt">FY13 Your Meeting Time is [Loading...] hours.</p>
+    <button type="button" name="" value="" id="getitButton" class="css3button">Visualize</button>
+    <br>
+    <br>
+    <br>
+    <div id="cal-heatmap"></div>
+    <div id="cal-heatmap2"></div>
+    <script type="text/javascript">
+        var calendar = new CalHeatMap();
+        calendar.init({
+            data: {},
+            start: new Date(2013, 3),
+            id : "graph_k",
+            domain : "month",
+            subDomain : "x_day",
+            range : 6,
+            cellsize: 15,
+            cellpadding: 3,
+            cellradius: 5,
+            domainGutter: 15,
+            scale: [2, 4, 6, 8],
+            itemName: ["hours", "hours"],
+            cellLabel: {
+                empty: "0 hours",
+                filled: "{count} {name} {date}"
+            },
+            scaleLabel: {
+                lower: "{min} {name}",
+                inner: "{down} {up} {name}",
+                upper: "{max} {name}"
+            },
+        });
+        $('.graph-legend').empty();
+
+        var cal = new CalHeatMap();
+        cal.init({
+            data: {},
+            start: new Date(2013, 9),
+            id : "graph_k",
+            domain : "month",
+            subDomain : "x_day",
+            range : 6,
+            cellsize: 15,
+            cellpadding: 3,
+            cellradius: 5,
+            domainGutter: 15,
+            scale: [2, 4, 6, 8],
+            itemName: ["hours", "hours"],
+            cellLabel: {
+                empty: "0 hours",
+                filled: "{count} {name} {date}"
+            },
+            scaleLabel: {
+                lower: "{min} {name}",
+                inner: "{down} {up} {name}",
+                upper: "{max} {name}"
+            },
+        });
+    </script>
+    <div id="dialog-modal" title="Loading...">
+        <!-- loading animation -->
+        <div id="floatingBarsG" style="display: none;">
+            <div class="blockG" id="rotateG_01"></div>
+            <div class="blockG" id="rotateG_02"></div>
+            <div class="blockG" id="rotateG_03"></div>
+            <div class="blockG" id="rotateG_04"></div>
+            <div class="blockG" id="rotateG_05"></div>
+            <div class="blockG" id="rotateG_06"></div>
+            <div class="blockG" id="rotateG_07"></div>
+            <div class="blockG" id="rotateG_08"></div>
+        </div>
+    </div>
+</body>
+</html>
