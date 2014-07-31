@@ -46,34 +46,6 @@ class IndexHandler(webapp2.RequestHandler):
         MAIN_PAGE_HTML = """\
         <!DOCTYPE html>
           <body>
-            <h1>Delete</h1>
-            <p>件名、期間を指定して予定削除できる機能。</p>
-            <p>たとえば、2/9〜2/11までの間で、会議名「会議予約」の予定を削除したいときは↓のように入力。</p>
-            <form action="/delete" method="get">
-              <div>件名:<input type="text" name="summary" value="【会議予約" style="width:300px;"></text></div>
-              <div>From:<input type="text" name="timeMin" value="2014-02-09T00:00:00+09:00" style="width:300px;"></text></div>
-              <div>To:<input type="text" name="timeMax" value="2014-02-11T00:00:00+09:00" style="width:300px;"></text></div>
-              <div><input type="submit" value="delete"></div>
-            </form>
-            <br>
-            <br>
-            <br>
-            <br>
-            - - - - - - -
-            <br>
-            <h1>Create</h1>
-            <p>Google Calendarに予定を登録できる機能。</p>
-            <p>Calendarから登録するのと同じ。</p>
-            <form action="/create" method="get">
-              <div>件名:<input type="text" name="summary" value="無題の予定" style="width:300px;"></text></div>
-              <div>説明:<input type="text" name="description" value="会議の説明" style="width:300px;"></text></div>
-              <div>場所:<input type="text" name="location" value="汐留" style="width:300px;"></text></div>
-              <div>開始時間:<input type="text" name="startdateTime" value="2014-02-10T10:00:00.000" style="width:300px;"></text></div>
-              <div>終了時間:<input type="text" name="enddateTime" value="2014-02-10T11:00:00.000" style="width:300px;"></text></div>
-              <div>タイムゾーン:<input type="text" name="timeZone" value="Asia/Tokyo" style="width:300px;"></text></div>
-              <div><input type="submit" value="add"></div>
-            </form>
-            <br>
             - - - - - - -
             <br>
             <h1>Read</h1>
