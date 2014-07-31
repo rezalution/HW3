@@ -9,7 +9,7 @@ threadsafe: true
   static_files: home.html
   upload: home.html
 
-# access the static resources in the root director
+# access the static resources in the root directory
 
 - url: /(.*)
   static_files: \1
