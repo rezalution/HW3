@@ -69,7 +69,7 @@ foreach ($entries as $entry) {
   This is what is displayed right now and must be replaced by the SQL query to insert into the database
 */
 
-    echo "When : " . $when;
+    echo "When: " . $when;
     echo "<br/> gCalDate : " . $gCalDate;
     echo "<br/> Start Date :  " . $gCalDateStart;
     echo "<br/> End Date : " . $gCalDateEnd;
