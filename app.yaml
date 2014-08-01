@@ -10,4 +10,4 @@ handlers:
   
   libraries:
 - name: pytz
-  version: latest
+  version: "latest"
