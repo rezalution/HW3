@@ -86,5 +86,5 @@ foreach ($entries as $entry) {
 	echo json_encode($arr);
 	
 }
-?>
+
 
