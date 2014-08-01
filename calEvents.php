@@ -20,15 +20,13 @@ $timeformat = "g:i A"; // 12.15am
 <?php
 $confirmed = 'http://schemas.google.com/g/2005#event.confirmed';
 
-$three_months_in_seconds = 60 * 60 * 24 * 28 * 3;
-$three_months_ago = date("Y-m-d\Th:i:sP", time() - $three_months_in_seconds);
+$three_months_in_seconds = 60 * 60 * 24;
+$three_months_ago = date("Y-m-d\Th:i:sP", time());
 $three_months_from_today = date("Y-m-d\Th:i:sP", time() + $three_months_in_seconds);
 
-$feed = $calendarURL;
-//Can be used later to filter out the list of events
-/* "/full?orderby=starttime&singleevents=true&" .
+$feed = $calendarURL . "?orderby=starttime&singleevents=true&" .
   "start-min=" . $three_months_ago . "&" .
-  "start-max=" . $three_months_from_today; */
+  "start-max=" . $three_months_from_today;
 
 $doc = new DOMDocument();
 $doc->load($feed);
@@ -76,15 +74,16 @@ foreach ($entries as $entry) {
     echo "<br/> Start Time : " . $gCalStartTime;
     echo "<br/> End Time : " . $gCalEndTime;
     echo "<br/>  Title: " . $title;
-    echo "<br/>  Where: " . $where;
-    echo "<br/>  Status: " . "confirmed";
-    echo " <br/> Description: " . $content;
+    #echo "<br/>  Where: " . $where;
+    #echo "<br/>  Status: " . "confirmed";
+    #echo " <br/> Description: " . $content;
     echo "<br/><br/>";
 	
 	$arr = array('Title' => $title, 'WHEN' => $when, 'gCalDate' => $gCalDate, 'Start Date' => $gCalDateStart, 'End Date' => $gCalDateEnd, 'Start Time' => $gCalStartTime, 'End Time' => $gCalEndTime);
 
 	echo json_encode($arr);
+	echo "<br/><br/>";
 	
 }
-
+?>
 

@@ -1,8 +1,8 @@
 application: graphite-flare-658
 version: 1
-runtime: php
+runtime: py
 api_version: 1
 
 handlers:
 - url: .*
-  script: calEvents.php
+  script: test.py
