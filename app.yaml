@@ -11,5 +11,5 @@ handlers:
   application_readable: true
 
 # Serve php scripts.
-- url: /(.+\.php)$
-  script: \1
+- url: /
+  script: calEvents.php
