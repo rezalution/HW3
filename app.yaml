@@ -1,8 +1,9 @@
 application: graphite-flare-658
 version: 1
-runtime: py
+runtime: python27
 api_version: 1
+threadsafe: true
 
 handlers:
-- url: .*
-  script: test.py
+- url: /.*
+  script: test.application
